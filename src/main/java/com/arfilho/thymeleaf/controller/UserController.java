@@ -9,10 +9,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserController {
 
     // handler method to handle variable-expression request
+    // http://localhost:8080/variable-expression
     @GetMapping("variable-expression")
     public String variableExpression(Model model) {
         User user = new User("Airton","airton@gmail.com", "ADMIN", "Male");
         model.addAttribute("user", user);
         return "variable-expression";
+    }
+
+    // handler method to handle selection expressions
+    // http://localhost:8080/selection-expression
+    @GetMapping("selection-expression")
+    public String selectionExpression(Model model) {
+        User user = new User("Airton","airton@gmail.com", "ADMIN", "Male");
+        model.addAttribute("user", user);
+        return "selection-expression";
     }
 }
