@@ -25,4 +25,11 @@ public class UserController {
         model.addAttribute("user", user);
         return "selection-expression";
     }
+
+    // handler method to handle message expressions request
+    // http://localhost:8080/message-expression
+    @GetMapping("message-expression")
+    public String messageExpression() {
+        return "message-expression";
+    }
 }
