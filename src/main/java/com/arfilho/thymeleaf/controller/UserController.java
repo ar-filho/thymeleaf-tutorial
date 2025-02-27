@@ -51,7 +51,6 @@ public class UserController {
         return "fragment-expression";
     }
 
-    // handler method ...
     // http://localhost:8080/users
     @GetMapping("/users")
     public String users(Model model) {
@@ -62,5 +61,17 @@ public class UserController {
         List<User> users = Arrays.asList(admin, airton, ramesh, meena);
         model.addAttribute("users", users);
         return "users";
+    }
+
+    // http://localhost:8080/if-unless
+    @GetMapping("if-unless")
+    public String ifUnless(Model model) {
+        User admin = new User("Admin", "admin@gmail.com", "ADMIN", "Male");
+        User airton = new User("Airton","airton@gmail.com", "USER", "Male");
+        User ramesh = new User("Ramesh","ramesh@gmail.com", "USER", "Male");
+        User meena = new User("Meena","meena@gmail.com", "USER", "Female");
+        List<User> users = Arrays.asList(admin, airton, ramesh, meena);
+        model.addAttribute("users", users);
+        return "if-unless";
     }
 }
